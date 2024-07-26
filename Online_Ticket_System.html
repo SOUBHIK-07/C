@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Ticket Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+            margin: auto;
+            max-width: 800px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            margin-top: 20px;
+        }
+        h2 {
+            color: #007bff;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="email"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .faq {
+            margin-top: 20px;
+        }
+        .faq h3 {
+            color: #007bff;
+        }
+        .faq p {
+            margin-top: 5px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border-left: 3px solid #007bff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Online Ticket System</h1>
+    </header>
+    <div class="container">
+        <h2>Submit a Ticket</h2>
+        <form action="/submit_ticket" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="issue">Issue:</label>
+            <textarea id="issue" name="issue" rows="4" required></textarea>
+            
+            <label for="priority">Priority:</label>
+            <select id="priority" name="priority" required>
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+            </select>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <div class="container">
+        <h2>Check Ticket Status</h2>
+        <form action="/check_status" method="post">
+            <label for="ticket_id">Ticket ID:</label>
+            <input type="text" id="ticket_id" name="ticket_id" required>
+            
+            <button type="submit">Check Status</button>
+        </form>
+    </div>
+    <div class="container faq">
+        <h2>Frequently Asked Questions</h2>
+        <h3>How do I submit a ticket?</h3>
+        <p>Fill out the form in the "Submit a Ticket" section and click "Submit".</p>
+        
+        <h3>How do I check my ticket status?</h3>
+        <p>Enter your Ticket ID in the "Check Ticket Status" section and click "Check Status".</p>
+        
+        <h3>What happens after I submit a ticket?</h3>
+        <p>Our support team will review your issue and respond via the email address provided.</p>
+    </div>
+</body>
+</html>
